@@ -6,10 +6,10 @@ Le jeu se joue généralement avec papier et crayon sur du papier quadrillé. À
 
 # Contacts:
 
- BOUAYADINE Younes - younes.bouayadine@etu.univ-orleans.fr - 06 45 21 20 18
+ BOUAYADINE Younes - younes.bouayadine@etu.univ-orleans.fr
  
- COLLET Elsa - elsa.collet@etu.univ-orleans.fr - 07 83 75 47 41
+ COLLET Elsa - elsa.collet@etu.univ-orleans.fr
  
- MOUSSI Cedric - cedric.moussi@etu.univ-orleans.fr - 06 73 30 43 03
+ MOUSSI Cedric - cedric.moussi@etu.univ-orleans.fr
  
- PALOS Killian - kylian.palos@etu.univ-orleans.fr - 06 73 22 67 38
+ PALOS Killian - kylian.palos@etu.univ-orleans.fr
