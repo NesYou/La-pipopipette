@@ -7,7 +7,7 @@ public class HelloWorld {
 		System.out.println("Elsa!");
 		System.out.println("Hello world ! This is me, Younes");
 		affichagePlateau();
-		System.out.println("Fini !");
+		System.out.println("Fini !bfgf");
 		
 	}
 
