@@ -12,4 +12,4 @@ Le jeu se joue généralement avec papier et crayon sur du papier quadrillé. À
  
  MOUSSI Cedric - cedric.moussi@etu.univ-orleans.fr
  
- PALOS Killian - kylian.palos@etu.univ-orleans.fr
+ PALOS Killian - killian.palos@etu.univ-orleans.fr
