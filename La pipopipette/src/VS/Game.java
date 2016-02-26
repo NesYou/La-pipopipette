@@ -29,7 +29,7 @@ public class Game {
 		System.out.println("Creation du plateau.");
 		System.out.print("Nombre de lignes: ");
 		
-		//Boucle tant que l'utilisateur ne saisit pas un nombre correct de lignes
+		//Boucle tant que l'utilisateur ne saisit pas un nombre correct de lignes.
 		while(!sc.hasNextInt()) {
 			System.out.print("Saisir un nombre correct: ");
 			sc.next();
@@ -39,7 +39,7 @@ public class Game {
 		
 		System.out.print("Nombre de colonnes: ");
 		
-		//Boucle tant que l'utilisateur ne saisit pas un nombre correct de colonnes
+		//Boucle tant que l'utilisateur ne saisit pas un nombre correct de colonnes.
 		while(!sc.hasNextInt()) {
 			System.out.print("Saisir un nombre correct: ");
 			sc.next();
@@ -47,11 +47,13 @@ public class Game {
 		nbColonnes = sc.nextInt();
 		System.out.println();
 		
-		System.out.println("Souhaitez vous un plateau avec bord ? (o/n): ");
+		System.out.print("Souhaitez vous un plateau avec bord ? (o/n): ");
 		String choix = scA.nextLine();
+		System.out.println();
 		if(choix.equals("o")) bord = true;
 		else bord = false;
 		
+		//Initialisation d'un plateau avec les donnees saisies au prealable.
 		Plateau p = new Plateau(nbLignes, nbColonnes, bord);
 		
 		System.out.println("Début de la partie.");
@@ -59,6 +61,7 @@ public class Game {
 			if(p.partieTerminee()) {
 				return;
 			}
+			//On enregistre la position initial du curseur. On remonte ici (*).
 			System.out.print((char)Event.ESCAPE + "7");
 			System.out.println();
 			System.out.println(p.toString());
@@ -72,6 +75,7 @@ public class Game {
 			int mouvement = sc.nextInt();
 			p.ajouterTrait(mouvement);
 			tour++;
+			//On reinitialise le curseur. On remonte a (*).
 			System.out.print((char)Event.ESCAPE + "8");
 		}
 		
