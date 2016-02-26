@@ -10,18 +10,7 @@ import java.util.Scanner;
 import java.awt.Event;
 
 public class Game {
-	
-	public static void tableauBidon(int nbLignes, int nbColonnes) {
-		int[][] tab = new int[nbLignes][nbColonnes];
-		for(int i = 0; i < 9; i++) {
-			for(int j = 0; j < 9; j++) {
-				tab[i][j] = (int) (0 + Math.random() * 12);
-				System.out.print(tab[i][j]+" ");
-			}
-			System.out.println();
-		}
-	}
-	
+		
 	//Un Scanner pour les int
 	static Scanner sc = new Scanner(System.in);
 	//Un Scanner pour les String
@@ -34,6 +23,8 @@ public class Game {
 		int tour = 1;
 		int nbLignes = 0;
 		int nbColonnes = 0;
+		int scoreJoueurA = 0;
+		int scoreJoueurB = 0;
 	
 		System.out.println("Creation du plateau.");
 		System.out.print("Nombre de lignes: ");
@@ -65,12 +56,12 @@ public class Game {
 		
 		System.out.println("Début de la partie.");
 		while(continuerPartie) {
-			/*if(p.partieTerminee()) {
+			if(p.partieTerminee()) {
 				return;
-			}*/
+			}
 			System.out.print((char)Event.ESCAPE + "7");
 			System.out.println();
-			tableauBidon(nbLignes, nbColonnes);
+			System.out.println(p.toString());
 			System.out.println();
 			if(tour % 2 !=0) {
 				joueurJouant = "Joueur A";
@@ -79,7 +70,7 @@ public class Game {
 			}
 			System.out.println("Tours du "+joueurJouant+": ");
 			int mouvement = sc.nextInt();
-			//p.ajouterTrait(mouvement);
+			p.ajouterTrait(mouvement);
 			tour++;
 			System.out.print((char)Event.ESCAPE + "8");
 		}

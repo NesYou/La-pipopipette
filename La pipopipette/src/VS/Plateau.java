@@ -61,6 +61,27 @@ public class Plateau {
 		/*this.nbTraits= nbColonnes*(nbLignes+1)+nbLignes*(nbColonnes+1);
 		System.out.println("nbTrait 1 : "+nbTraits);*/
 	}
+	
+	/* Getters */
+	public int getNbLignes() {
+		return nbLignes;
+	}
+
+	public int getNbColonnes() {
+		return nbColonnes;
+	}
+
+	public long getBoard() {
+		return board;
+	}
+
+	public int getNbTraits() {
+		return nbTraits;
+	}
+
+	public boolean isBorder() {
+		return border;
+	}
 
 	public String toString(){
 		
@@ -103,6 +124,16 @@ public class Plateau {
 			chaine+="\u00A0\u00A0";
 		}
 		return chaine;
+	}
+
+	public boolean partieTerminee() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public void ajouterTrait(int mouvement) {
+		// TODO Auto-generated method stub
+		
 	}
 
 
