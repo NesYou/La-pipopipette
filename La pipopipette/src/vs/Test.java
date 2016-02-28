@@ -1,4 +1,4 @@
-package VS;
+package vs;
 
 public class Test {
 
