@@ -112,7 +112,7 @@ public class Jeu {
 			}while(p.partieContinue());
 			
 			System.out.println(p.toString()+"\n");
-			System.out.println(" ----------------------------------------\n");
+			System.out.println(" ----------------------------------------e\n");
 			System.out.println(joueur1.toString());
 			System.out.println(joueur2.toString());
 			System.out.println("\n ---------------------------------------\n");
