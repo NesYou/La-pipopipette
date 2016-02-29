@@ -133,11 +133,17 @@ public class Plateau implements PlateauInterface{
 	 */
 
 	public void ajouterTrait(int mouvement)throws DejaPresentException {
-		if(((board >> nbTraits-mouvement) & 1)==1){
-			throw new DejaPresentException("Ce trait est déjà placé.");
-		}else{
-			long trait=1<<(nbTraits-mouvement);
-			board = board | trait;
+		if(mouvement<1 && mouvement>nbTraits){
+			throw new IllegalArgumentException("La position choisie doit être "
+							+ "comprise entre 1 et "+nbTraits+".");
+		}
+		else{
+			if(((board >> nbTraits-mouvement) & 1)==1){
+				throw new DejaPresentException("Ce trait est déjà placé.");
+			}else{
+				long trait=1<<(nbTraits-mouvement);
+				board = board | trait;
+			}	
 		}
 	}
 
