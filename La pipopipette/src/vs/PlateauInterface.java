@@ -9,7 +9,7 @@ public interface PlateauInterface {
 	 * 		Fonction toString permettant l'affichage du plateau sous forme physique
 	 * @see java.lang.Object#toString()
 	 */
-	public String toString();
+	String toString();
 
 	/*
 	 *	La fonction caractère vérifie l'état du bit numtrait et creer une chaine 
@@ -21,7 +21,7 @@ public interface PlateauInterface {
 	 * @link package.vs#toString affichage  de _ ou |
 	 * @see vs.PlateauInterface#caracteres(int, java.lang.Long, java.lang.String)
 	 */
-	public String caracteres(int numTrait, String carac);
+	String caracteres(int numTrait, String carac);
 
 	/*
 	 * Fonction qui calcul le nombre de petits carrés,
@@ -30,7 +30,7 @@ public interface PlateauInterface {
 	 *
 	 *@return nbCarre nombre de carrés dans la configuration actuelle		
 	 * */
-	public int carre();
+	int carre();
 
 	/*
 	 * Fonction d'ajout d'un trait dans la configuration actuelle. Si la position choisie
@@ -42,7 +42,7 @@ public interface PlateauInterface {
 	 * @see vs.PlateauInterface#ajouterTrait(int)
 	 */
 
-	public void ajouterTrait(int mouvement)throws DejaPresentException ;
+	void ajouterTrait(int mouvement)throws DejaPresentException ;
 
 	/*
 	 * Fonction qui détermine si la partie continue. 
@@ -52,6 +52,6 @@ public interface PlateauInterface {
 	 * 
 	 * @see vs.PlateauInterface#partieContinue()
 	 */
-	public boolean partieContinue();
+	boolean partieContinue();
 
 }
