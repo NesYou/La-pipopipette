@@ -53,5 +53,5 @@ public interface PlateauInterface {
 	 * @see vs.PlateauInterface#partieContinue()
 	 */
 	boolean partieContinue();
-	public static void test();
+
 }
