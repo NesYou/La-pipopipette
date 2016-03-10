@@ -43,6 +43,10 @@ public class Plateau implements PlateauInterface{
 			board=0b0L;
 		}
 	}
+	
+	public long getBoard() { return this.board; }
+	
+	public void setBoard(Long board) { this.board = board; }
 
 
 	/*
@@ -59,7 +63,7 @@ public class Plateau implements PlateauInterface{
 			chaine+="\n";
 			for(int j=0; j < nbColonnes; j++) {
 				if(t>=0){	
-					chaine+=caracteres(t," –—");
+					chaine+=caracteres(t," --");
 					t--;
 				}
 			}
