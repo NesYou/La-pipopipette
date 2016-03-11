@@ -1,5 +1,7 @@
 package vs;
 
+import java.util.List;
+import java.util.ArrayList;
 
 public class Plateau implements PlateauInterface{		
 	/*
@@ -100,6 +102,16 @@ public class Plateau implements PlateauInterface{
 			chaine+="\u00A0\u00A0\u00A0";
 		}
 		return chaine;
+	}
+	
+	public List<Integer> mouvementsPossibles() {
+		List<Integer> l = new ArrayList<>();
+		for(int i = 1; i < nbTraits-1; i++) {
+			if ((((board >> i) & 1) == 0)) {
+				l.add(i);
+			}
+		}
+		return l;
 	}
 
 	/*

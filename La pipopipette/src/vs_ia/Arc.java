@@ -16,7 +16,7 @@ public class Arc {
 
    public Arc(Plateau PlateauNoeudOrigine, Plateau PlateauNoeudExtremite, Graphe graphe){
 
-    // recherchenoeudorigine par son nom
+    // recherchenoeudorigine
     ListIterator<Noeud> liNoeuds = graphe.listeNoeuds.listIterator();
     Boolean trouveOrigine = false;
     while (liNoeuds.hasNext()&&!trouveOrigine) {
@@ -26,7 +26,7 @@ public class Arc {
         trouveOrigine = true;
        }
     }
-    // recherchenoeudextremite par son nom
+    // recherchenoeudextremite
     liNoeuds = graphe.listeNoeuds.listIterator();
     Boolean trouveExtremite = false;
     while (liNoeuds.hasNext()&&!trouveExtremite) {

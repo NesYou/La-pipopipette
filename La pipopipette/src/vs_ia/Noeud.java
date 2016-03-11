@@ -6,7 +6,9 @@ import java.util.ListIterator;
 import vs.Plateau;
 
 public class Noeud {
+	
    Plateau plateau;
+   
    public Plateau getPlateau() {
     return plateau;
    }

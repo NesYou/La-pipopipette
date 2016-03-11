@@ -1,7 +1,6 @@
 package vs_ia;
 
 import vs.Plateau;
-import java.util.Scanner;
 
 public class TestIa {
 	
@@ -9,7 +8,13 @@ public class TestIa {
 		Plateau a = new Plateau(3, 3, true);
 		Plateau b = new Plateau(3, 3, true);
 		
-		a.setBoard(111110100010010001001111);
+		a.setBoard(0b111110101010010001001111L);
+		
+		b.setBoard(0b111110110010010001001111L);
+		
+		System.out.println(a.toString());
+		
+		System.out.println(a.mouvementsPossibles().toString());
 	
 	}
 }
