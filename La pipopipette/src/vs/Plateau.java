@@ -65,7 +65,7 @@ public class Plateau implements PlateauInterface{
 			chaine+="\n";
 			for(int j=0; j < nbColonnes; j++) {
 				if(t>=0){	
-					chaine+=caracteres(t," --");
+					chaine += caracteres(t, " --");
 					t--;
 				}
 			}
@@ -104,9 +104,13 @@ public class Plateau implements PlateauInterface{
 		return chaine;
 	}
 	
+	/**
+	 * Calcul l'ensemble des coups restant sur board
+	 * @return liste l d'Integer contenant les coups possibles.
+	 */
 	public List<Integer> mouvementsPossibles() {
 		List<Integer> l = new ArrayList<>();
-		for(int i = 1; i < nbTraits-1; i++) {
+		for(int i = 0; i < nbTraits-1; i++) {
 			if ((((board >> i) & 1) == 0)) {
 				l.add(i);
 			}

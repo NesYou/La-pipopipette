@@ -13,8 +13,8 @@ public class Jeu {
 		public static void main(String [] args) {
 			boolean bord;
 			int joueurJouant = 1;
-			Joueur joueur1=new Joueur(1);
-			Joueur joueur2=new Joueur(2);
+			Joueur joueur1 = new Joueur(1);
+			Joueur joueur2 = new Joueur(2);
 			int nbLignes = 0;
 			int nbColonnes = 0;
 		
@@ -122,6 +122,4 @@ public class Jeu {
 			//On reinitialise le curseur. On remonte a (*).
 			System.out.print((char)Event.ESCAPE + "8");
 		}
-	
-
 }
