@@ -2,6 +2,7 @@ package vs;
 
 import java.awt.Event;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Jeu {
 
@@ -17,6 +18,10 @@ public class Jeu {
 			Joueur joueur2 = new Joueur(2);
 			int nbLignes = 0;
 			int nbColonnes = 0;
+			boolean simplet;
+			
+			
+			
 		
 			System.out.println("Creation du plateau.");
 			System.out.print("Nombre de lignes: ");
@@ -46,6 +51,8 @@ public class Jeu {
 				bord = true;
 			else 
 				bord = false;
+			
+			
 
 			//Initialisation d'un plateau avec les donnees saisies au prealable.
 			Plateau p = new Plateau(nbLignes, nbColonnes, bord);
@@ -83,12 +90,13 @@ public class Jeu {
 					repeat=joueurJouant;
 				}
 				
+				//Si le nombre de carre reste le meme alors on change de joueur
 				if(p.carre()==nbCarre){
 					if(joueurJouant==1)
 						joueurJouant=2;
 					else
 						joueurJouant=1;
-
+				//Sinon, le nombre de carre a forcement augmente. On reste donc sur le meme joueur et on actualise le nb de points
 				}else{
 					if(joueurJouant==1){
 						joueur1.ajoutPoints(p.carre()-nbCarre);
@@ -116,8 +124,7 @@ public class Jeu {
 			System.out.println(joueur1.toString());
 			System.out.println(joueur2.toString());
 			System.out.println("\n ---------------------------------------\n");
-			System.out.println((joueur1.getNbPoints()>joueur2.getNbPoints()?joueur1:joueur2)
-									+" a gagné !!");
+			System.out.println((joueur1.getNbPoints()>joueur2.getNbPoints()?joueur1:joueur2) + " a gagné !!");
 			
 			//On reinitialise le curseur. On remonte a (*).
 			System.out.print((char)Event.ESCAPE + "8");
