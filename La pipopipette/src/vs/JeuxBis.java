@@ -59,6 +59,7 @@ public class JeuxBis {
 		Plateau p = new Plateau(nbLignes, nbColonnes, bord);
 		int nbCarre = p.carre();
 		
+				
 		while(p.partieContinue()) {
 			System.out.println(p.toString());
 			if(repeat) {
@@ -86,7 +87,7 @@ public class JeuxBis {
 					System.out.println("Tour du joueur simplet, nbPoint: "+nbPointBot);
 					l = p.mouvementsPossibles();
 					try {
-						p.ajouterTrait((int) l.get((int) (Math.random() * (l.size() - 0))));
+						p.ajouterTrait((int) l.get((int) ((Math.random() * (l.size() - 0)))));
 					} catch (DejaPresentException e) {
 						System.out.println(e.getMessage());
 					}
