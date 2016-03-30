@@ -16,7 +16,7 @@ public class JeuxBis {
 		boolean repeat = false;
 		int nbPointJoueur = 0;
 		int nbPointBot = 0;
-		List l;
+		List<Integer> l;
 		
 		Scanner sc = new Scanner(System.in);
 		Scanner sl = new Scanner(System.in);
@@ -60,8 +60,9 @@ public class JeuxBis {
 		int nbCarre = p.carre();
 		
 				
-		while(p.partieContinue()) {
+		do {
 			System.out.println(p.toString());
+			System.out.println(Long.toBinaryString(p.getBoard()));
 			if(repeat) {
 				if(dernierJoueur == 0) {
 					System.out.println("Tours du joueur, nbPoint: "+nbPointJoueur);
@@ -87,7 +88,10 @@ public class JeuxBis {
 					System.out.println("Tour du joueur simplet, nbPoint: "+nbPointBot);
 					l = p.mouvementsPossibles();
 					try {
-						p.ajouterTrait((int) l.get((int) ((Math.random() * (l.size() - 0)))));
+						int mouvement = l.get((int) (Math.random() * (l.size() - 0)));
+						System.out.println("Simplet tente de jouer: "+mouvement);
+						System.out.println("Coups possibles: "+l.toString());
+						p.ajouterTrait(mouvement);
 					} catch (DejaPresentException e) {
 						System.out.println(e.getMessage());
 					}
@@ -128,7 +132,10 @@ public class JeuxBis {
 					System.out.println("Tour du joueur simplet, nbPoint: "+nbPointBot);
 					l = p.mouvementsPossibles();
 					try {
-						p.ajouterTrait((int) l.get((int) (Math.random() * (l.size() - 0))));
+						int mouvement = l.get((int) (Math.random() * (l.size() - 0)));
+						System.out.println("Simplet tente de jouer: "+mouvement);
+						System.out.println("Coups possibles: "+l.toString());
+						p.ajouterTrait(mouvement);
 					} catch (DejaPresentException e) {
 						System.out.println(e.getMessage());
 					}
@@ -144,6 +151,6 @@ public class JeuxBis {
 					}
 				}
 			}
-		}
+		} while(p.partieContinue());
 	}
 }

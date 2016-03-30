@@ -15,6 +15,8 @@ public class Plateau implements PlateauInterface{
 	private long board;
 	private int nbTraits;
 	public boolean border;
+	
+	public int getNbTraits() { return this.nbTraits; }
 	/*
 	 * Initialisation du plateau
 	 * 
@@ -110,8 +112,9 @@ public class Plateau implements PlateauInterface{
 	 */
 	public List<Integer> mouvementsPossibles() {
 		List<Integer> l = new ArrayList<>();
-		for(int i = 0; i < nbTraits-1; i++) {
-			if ((((board >> i) & 1) == 0)) {
+		for(int i = 1; i <= nbTraits; i++) {
+			
+			if(Long.toBinaryString(board).charAt(i-1) == '0') {
 				l.add(i);
 			}
 		}
@@ -123,7 +126,9 @@ public class Plateau implements PlateauInterface{
 	 *		qui redéfinit la variable global nbCarre,
 	 *		et qui la retourne.
 	 *
-	 *@return nbCarre nombre de carrés dans la configuration actuelle		
+	 *@return nbCarre nombif ((((board >> i-1) & 1) == 0)) {
+				l.add(i);
+			}re de carrés dans la configuration actuelle		
 	 * */
 	public int carre(){
 		int plus=(nbColonnes*2+1);
@@ -143,7 +148,9 @@ public class Plateau implements PlateauInterface{
 
 
 	/*
-	 * Fonction d'ajout d'un trait dans la configuration actuelle. Si la position choisie
+	 * Fonction d'ajout d'if ((((board >> i-1) & 1) == 0)) {
+				l.add(i);
+			}un trait dans la configuration actuelle. Si la position choisie
 	 * 		contient déjà un 1, elle renvoie une exception sinon elle l'ajoute
 	 * 		La position effective dans le long est determiné par (le nombre de traits - le mouvement)
 	 * 
