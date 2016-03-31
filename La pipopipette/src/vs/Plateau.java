@@ -183,12 +183,9 @@ public class Plateau implements PlateauInterface{
 	 * @see vs.PlateauInterface#partieContinue()
 	 */
 	public boolean partieContinue(){
-		if(carre()<(nbColonnes*nbLignes)){
-
+		if(carre()<=(nbColonnes*nbLignes))
 			return true;
-		}
 		System.out.println("La partie est terminée");
 		return false;
-
 	}
 }

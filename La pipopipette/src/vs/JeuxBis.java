@@ -17,6 +17,7 @@ public class JeuxBis {
 		int nbPointJoueur = 0;
 		int nbPointBot = 0;
 		List<Integer> l;
+		boolean ContinuerPartie = true;
 		
 		Scanner sc = new Scanner(System.in);
 		Scanner sl = new Scanner(System.in);
@@ -60,8 +61,9 @@ public class JeuxBis {
 		int nbCarre = p.carre();
 		
 				
-		do {
+		while(p.mouvementsPossibles().size() != 0) {
 			System.out.println(p.toString());
+			System.out.println("Nb carres: "+p.carre());
 			System.out.println(Long.toBinaryString(p.getBoard()));
 			if(repeat) {
 				if(dernierJoueur == 0) {
@@ -151,6 +153,9 @@ public class JeuxBis {
 					}
 				}
 			}
-		} while(p.partieContinue());
+			if (!p.partieContinue())
+				ContinuerPartie = false;
+			
+		} 
 	}
 }
