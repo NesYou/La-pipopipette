@@ -9,7 +9,6 @@ public class JeuxBis {
 	public static void main(String[] args) {
 		System.out.println("Vous affrontez le joueur simplet!");
 		boolean bord;
-		Joueur joueur = new Joueur(1);
 		int nbLignes = 0;
 		int nbColonnes = 0;
 		int dernierJoueur = 0;
@@ -17,7 +16,6 @@ public class JeuxBis {
 		int nbPointJoueur = 0;
 		int nbPointBot = 0;
 		List<Integer> l;
-		boolean ContinuerPartie = true;
 		
 		Scanner sc = new Scanner(System.in);
 		Scanner sl = new Scanner(System.in);
@@ -59,13 +57,16 @@ public class JeuxBis {
 		//Initialisation d'un plateau avec les donnees saisies au prealable.
 		Plateau p = new Plateau(nbLignes, nbColonnes, bord);
 		int nbCarre = p.carre();
+		int cpt = 0;
 		
 				
-		while(p.mouvementsPossibles().size() != 0) {
+		while(p.partieContinue()) {
+			cpt ++;
+			System.out.println("Tour: "+cpt);
 			System.out.println(p.toString());
 			System.out.println("Nb carres: "+p.carre());
 			System.out.println(Long.toBinaryString(p.getBoard()));
-			if(repeat) {
+			if(repeat && !p.partieContinue()) {
 				if(dernierJoueur == 0) {
 					System.out.println("Tours du joueur, nbPoint: "+nbPointJoueur);
 					System.out.println("Mouvement: ");
@@ -79,14 +80,14 @@ public class JeuxBis {
 						nbCarre = p.carre();
 						nbPointJoueur ++;
 						repeat = true;
-						dernierJoueur = 0;
+						
 					}
 					else {
 						repeat = false;
 						dernierJoueur = 1;
 					}
 				}
-				else {
+				else if (dernierJoueur == 1){
 					System.out.println("Tour du joueur simplet, nbPoint: "+nbPointBot);
 					l = p.mouvementsPossibles();
 					try {
@@ -101,7 +102,6 @@ public class JeuxBis {
 						nbCarre = p.carre();
 						nbPointBot ++;
 						repeat = true;
-						dernierJoueur = 1;
 					}
 					else {
 						repeat = false;
@@ -123,7 +123,7 @@ public class JeuxBis {
 						nbCarre = p.carre();
 						nbPointJoueur ++;
 						repeat = true;
-						dernierJoueur = 0;
+						
 					}
 					else {
 						repeat = false;
@@ -145,17 +145,16 @@ public class JeuxBis {
 						nbCarre = p.carre();
 						nbPointBot ++;
 						repeat = true;
-						dernierJoueur = 1;
+						
 					}
 					else {
 						repeat = false;
 						dernierJoueur = 0;
 					}
 				}
-			}
-			if (!p.partieContinue())
-				ContinuerPartie = false;
-			
-		} 
+			}			
+		}
+		sc.close();
+		sl.close();
 	}
 }
