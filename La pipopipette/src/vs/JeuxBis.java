@@ -56,17 +56,18 @@ public class JeuxBis {
 
 		//Initialisation d'un plateau avec les donnees saisies au prealable.
 		Plateau p = new Plateau(nbLignes, nbColonnes, bord);
-		int nbCarre = p.carre();
+		int nbCarre;
 		int cpt = 0;
 		
-				
+		System.out.println("Tour: "+cpt);
+		System.out.println(p.toString());
+		System.out.println("Nb carres: "+p.carre());
+		System.out.println(Long.toBinaryString(p.getBoard()));
+		
 		while(p.partieContinue()) {
 			cpt ++;
-			System.out.println("Tour: "+cpt);
-			System.out.println(p.toString());
-			System.out.println("Nb carres: "+p.carre());
-			System.out.println(Long.toBinaryString(p.getBoard()));
-			if(repeat && !p.partieContinue()) {
+			nbCarre = p.carre();
+			if(repeat) {
 				if(dernierJoueur == 0) {
 					System.out.println("Tours du joueur, nbPoint: "+nbPointJoueur);
 					System.out.println("Mouvement: ");
@@ -77,8 +78,8 @@ public class JeuxBis {
 						System.out.println(e.getMessage());
 					}
 					if(nbCarre != p.carre()) {
-						nbCarre = p.carre();
-						nbPointJoueur ++;
+						
+						nbPointJoueur  += p.carre() - nbCarre;
 						repeat = true;
 						
 					}
@@ -99,8 +100,8 @@ public class JeuxBis {
 						System.out.println(e.getMessage());
 					}
 					if(nbCarre != p.carre()) {
-						nbCarre = p.carre();
-						nbPointBot ++;
+						
+						nbPointBot += p.carre() - nbCarre;
 						repeat = true;
 					}
 					else {
@@ -120,8 +121,8 @@ public class JeuxBis {
 						System.out.println(e.getMessage());
 					}
 					if(nbCarre != p.carre()) {
-						nbCarre = p.carre();
-						nbPointJoueur ++;
+						
+						nbPointJoueur += p.carre() - nbCarre;
 						repeat = true;
 						
 					}
@@ -142,8 +143,8 @@ public class JeuxBis {
 						System.out.println(e.getMessage());
 					}
 					if(nbCarre != p.carre()) {
-						nbCarre = p.carre();
-						nbPointBot ++;
+						
+						nbPointBot += p.carre() - nbCarre;
 						repeat = true;
 						
 					}
@@ -152,7 +153,12 @@ public class JeuxBis {
 						dernierJoueur = 0;
 					}
 				}
-			}			
+			}
+			System.out.println("Tour: "+cpt);
+			System.out.println(p.toString());
+			System.out.println("Nb carres: "+p.carre());
+			System.out.println(Long.toBinaryString(p.getBoard()));
+			System.out.println("Simplet: "+nbPointBot+". Joueur: "+nbPointJoueur);
 		}
 		sc.close();
 		sl.close();

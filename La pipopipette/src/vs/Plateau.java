@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Plateau implements PlateauInterface{		
 	/*
 	 * Classe plateau
-	 * 	La classe plateau permet la specification du plateau et son évolution
+	 * 	La classe plateau permet la specification du plateau et son evolution
 	 * 
 	 * 
 	 */
@@ -85,12 +85,12 @@ public class Plateau implements PlateauInterface{
 	}
 
 	/*
-	 *	La fonction caractère vérifie l'état du bit numtrait et creer une chaine 
-	 * 		de caractère contenant carac sinon deux espaces inséccables.
+	 *	La fonction caractère verifie l'etat du bit numtrait et creer une chaine 
+	 * 		de caractère contenant carac sinon deux espaces inseccables.
 	 * 	
 	 * @param numTrait Le trait courant (position de 0 à taille-1
 	 * @param carac Pouvant contenir les valeurs "  –—" ou "|\u00A0"
-	 * @return chaine Chaine de caratère contenant carac ou espace insécable.
+	 * @return chaine Chaine de caratère contenant carac ou espace insecable.
 	 * @link package.vs#toString affichage  de _ ou |
 	 * @see vs.PlateauInterface#caracteres(int, java.lang.Long, java.lang.String)
 	 */
@@ -122,13 +122,13 @@ public class Plateau implements PlateauInterface{
 	}
 
 	/*
-	 * Fonction qui calcul le nombre de petits carrés,
-	 *		qui redéfinit la variable global nbCarre,
+	 * Fonction qui calcul le nombre de petits carres,
+	 *		qui redefinit la variable global nbCarre,
 	 *		et qui la retourne.
 	 *
 	 *@return nbCarre nombif ((((board >> i-1) & 1) == 0)) {
 				l.add(i);
-			}re de carrés dans la configuration actuelle		
+			}re de carres dans la configuration actuelle		
 	 * */
 	public int carre(){
 		int plus=(nbColonnes*2+1);
@@ -151,8 +151,8 @@ public class Plateau implements PlateauInterface{
 	 * Fonction d'ajout d'if ((((board >> i-1) & 1) == 0)) {
 				l.add(i);
 			}un trait dans la configuration actuelle. Si la position choisie
-	 * 		contient déjà un 1, elle renvoie une exception sinon elle l'ajoute
-	 * 		La position effective dans le long est determiné par (le nombre de traits - le mouvement)
+	 * 		contient dejà un 1, elle renvoie une exception sinon elle l'ajoute
+	 * 		La position effective dans le long est determine par (le nombre de traits - le mouvement)
 	 * 
 	 * @param mouvement position choisie par le joueur
 	 * @exception DejaPresentException 
@@ -161,12 +161,12 @@ public class Plateau implements PlateauInterface{
 
 	public void ajouterTrait(int mouvement)throws DejaPresentException {
 		if(mouvement<1 && mouvement>nbTraits){
-			throw new IllegalArgumentException("La position choisie doit être "
+			throw new IllegalArgumentException("La position choisie doit etre "
 							+ "comprise entre 1 et "+nbTraits+".");
 		}
 		else{
 			if(((board >> nbTraits-mouvement) & 1)==1){
-				throw new DejaPresentException("Ce trait est déjà placé.");
+				throw new DejaPresentException("Ce trait est dejà place.");
 			}else{
 				long trait=1<<(nbTraits-mouvement);
 				board = board | trait;
@@ -175,18 +175,18 @@ public class Plateau implements PlateauInterface{
 	}
 
 	/*
-	 * Fonction qui détermine si la partie continue. 
-	 * 		Si le nombre de carrés en cours est inférieur 
+	 * Fonction qui determine si la partie continue. 
+	 * 		Si le nombre de carres en cours est inferieur 
 	 * 		aux nombres de cases possibles alors elle continue,
-	 *  	sinon false la partie est terminée.
+	 *  	sinon false la partie est terminee.
 	 * 
 	 * @see vs.PlateauInterface#partieContinue()
 	 */
 	public boolean partieContinue(){
-		if(carre()<=(nbColonnes*nbLignes)) {
+		if(carre()<(nbColonnes*nbLignes)) {
 			return true;
 		}
-		System.out.println("La partie est terminée");
+		System.out.println("La partie est terminee");
 		return false;
 	}
 }

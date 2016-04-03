@@ -64,7 +64,7 @@ public class Jeu {
 			int mouvement ;
 			int nbCarre;
 			int repeat;
-			System.out.println("Début de la partie.");
+			System.out.println("Debut de la partie.");
 
 			System.out.println(p.toString()+"\n");
 			System.out.println(joueur1.toString());
@@ -124,7 +124,7 @@ public class Jeu {
 			System.out.println(joueur1.toString());
 			System.out.println(joueur2.toString());
 			System.out.println("\n ---------------------------------------\n");
-			System.out.println((joueur1.getNbPoints()>joueur2.getNbPoints()?joueur1:joueur2) + " a gagné !!");
+			System.out.println((joueur1.getNbPoints()>joueur2.getNbPoints()?joueur1:joueur2) + " a gagne !!");
 			
 			//On reinitialise le curseur. On remonte a (*).
 			System.out.print((char)Event.ESCAPE + "8");
